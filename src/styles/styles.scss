@@ -1,0 +1,21 @@
+@import '~bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;900&display=swap');
+
+:root {
+    --white: #fff;
+    --prinary-color: #f50c36;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
