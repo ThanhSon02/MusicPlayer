@@ -1,1 +1,43 @@
-@import '../../styles/styles.scss'
+@import '../../styles/styles.scss';
+
+.song-container {
+    width: 250px;
+    height: 54px;
+    margin-top: 20px;
+    background-image: linear-gradient(to right,rgba(0,0,0,0.18),rgba(0,0,0,0));
+}
+
+.song-img {
+    width: 90px;
+    height: 100%;
+    margin-right: 16px;
+}
+
+.song-name {
+    font-size: 1.6rem;
+}
+
+.song-detail {
+    font-size: 1.4rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.long {
+    position: relative;
+    align-items: center;
+}
+
+.long::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -12px;
+    display: block;
+    height: 3px;
+    width: 3px;
+    border-radius: 50%;
+    background-color: white;
+}
