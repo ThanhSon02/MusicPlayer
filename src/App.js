@@ -5,6 +5,7 @@ import images from './assets/img';
 import Song from './components/Song/Song'
 import audios from './assets/audio';
 import Player from './components/Player/Player';
+import Playlist from './components/Playlist/Playlist';
 
 function App() {
     let time = new Date().toLocaleTimeString();
@@ -18,13 +19,10 @@ function App() {
 
     const audioElm = useRef()
 
-    const handlePlay = () => {
-        audioElm.current.play()
-    }
-
 
     return (
-        <div className="app container-fluid g-0 d-flex justify-content-center align-items-center">
+        <div className="app container-fluid g-0 d-flex align-items-center flex-column">
+            {/* Main section */}
             <div className='play-section position-relative d-flex justify-content-center'>
                 <img className='background position-absolute' src={images.backgroung} alt=''/>
                 <div className='play-section__content position-absolute z-1'>
@@ -43,7 +41,14 @@ function App() {
                 </div>
             </div>
 
-            <div className='playlist-section'></div>
+            {/* Playlist section */}
+            <div className='playlist-section'>
+                <p>Upcoming content</p>
+
+                {/* Playlist */}
+                <Playlist className='position-absolute'/>
+
+            </div>
         </div>
     );
 }

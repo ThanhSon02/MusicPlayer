@@ -6,7 +6,7 @@ function Player() {
     return (
         <div className="container d-flex flex-column justify-content-between">
             <div className='player-bar'>
-                <input type={'range'}/>
+                <div className="progress-bar"></div>
             </div>
             <div className='player-btns d-flex justify-content-between'>
                 <div className='control-btns d-flex'>
