@@ -1,6 +1,10 @@
 @import 'normalize.css';
 @import './styles/styles.scss';
 
+.app {
+    background-image: linear-gradient(to right, #C9FFB6, #00D5F2);
+}
+
 .play-section {
     width: 1440px;
     height: 668px;
@@ -40,9 +44,6 @@
     height: 100px;
     width: 100%;
     margin-top: 32px;
-    background-image: linear-gradient(to right,rgba(119, 157, 176),rgb(78, 78, 78));
-    opacity: 0.4;
-    border: 1px solid rgba(119, 157, 176, 0.3);
     box-shadow: 0 -3px 300px rgba(0,0,0);
-    filter: blur(8px);
+    backdrop-filter: blur(20px);
 }
