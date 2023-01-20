@@ -18,7 +18,12 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    overflow: scroll;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 p {

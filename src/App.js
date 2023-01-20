@@ -21,33 +21,35 @@ function App() {
 
 
     return (
-        <div className="app container-fluid g-0 d-flex align-items-center flex-column">
-            {/* Main section */}
-            <div className='play-section position-relative d-flex justify-content-center'>
-                <img className='background position-absolute' src={images.backgroung} alt=''/>
-                <div className='play-section__content position-absolute z-1'>
-                    <h3 className='time text-uppercase text-white'>{currentTime}</h3>
-                    <h4 className='song_name text-uppercase text-white'>Once upon time in new york</h4>
-                    <div className='next-playlist text-white'>
-                        Up next
-                        <Song/>
-                        <Song/>
-                        <Song/>
+        <div className="app container-fluid px-5">
+            <div className='row overflow-hidden'>
+                {/* Main section */}
+                <div className='play-section g-0 position-relative'>
+                    <img className='position-absolute background' src={images.backgroung} alt=''/>
+                    <div className='play-section__content position-absolute z-1'>
+                        <h3 className='time text-uppercase text-white'>{currentTime}</h3>
+                        <h4 className='song_name text-uppercase text-white'>Once upon time in new york</h4>
+                        <div className='next-playlist text-white'>
+                            Up next
+                            <Song/>
+                            <Song/>
+                            <Song/>
+                        </div>
+                    </div>
+                    <div className='play-control d-flex position-absolute bottom-0 justify-content-center align-items-center'>
+                        <audio ref={audioElm} src={audios.song1}></audio>
+                        <Player/>
                     </div>
                 </div>
-                <div className='play-control position-absolute z-1 bottom-0 d-flex justify-content-center align-items-center'>
-                    <audio ref={audioElm} src={audios.song1}></audio>
-                    <Player/>
+
+                {/* Playlist section */}
+                <div className='playlist-section justify-content-center'>
+                    <span>Upcoming content</span>
+
+                    {/* Playlist */}
+                    <Playlist/>
+
                 </div>
-            </div>
-
-            {/* Playlist section */}
-            <div className='playlist-section'>
-                <p>Upcoming content</p>
-
-                {/* Playlist */}
-                <Playlist className='position-absolute'/>
-
             </div>
         </div>
     );
