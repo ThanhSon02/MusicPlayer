@@ -1,0 +1,19 @@
+@import '../../styles/styles.scss';
+
+.play-pause-btn, .next-btn, .volumn-btn {
+    margin: 0 12px;
+    padding: 0;
+
+}
+
+.speed-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: black;
+    background-color: white;
+    width: 28px;
+    border-radius: 4px;
+}

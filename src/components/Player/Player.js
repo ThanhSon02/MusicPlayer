@@ -1,40 +1,46 @@
 import './Player.scss'
-import images from '../../assets/img';
+import Control from './Control';
+import ProgressBar from './Progressbar';
+import { useState, useRef, useEffect } from 'react';
 
-function Player() {
-    const isPlaying = true;
+function Player({ tracksSrc }) {
+
+    const [isPlaying, setIsPlaying] = useState(false)
+    const [trackIndex, setTrackIndex] = useState(0)
+    const [trackProgress, setTrackProgress] = useState(0)
+    const audioRef = useRef(new Audio(tracksSrc[0].src))
+
+    useEffect(() => {
+        if(isPlaying) {
+            audioRef.current.play()
+        }else {
+            audioRef.current.pause()
+        }
+    },[isPlaying])
+
+    const toNextTrack = () => {
+        console.log("To next track");
+    }
+
+    const toAdjustVolumn = () => {
+        console.log("To adjust volumn");
+    }
+
+    const toAdjustSpeed = () => {
+        console.log("To adjust speed");
+    }
+
+
     return (
         <div className="container d-flex flex-column justify-content-between">
-            <div className='player-bar'>
-                <div className="progress-bar"></div>
-            </div>
-            <div className='player-btns d-flex justify-content-between'>
-                <div className='control-btns d-flex'>
-                    {isPlaying ?
-                        <div className='pause-btn btn ms-0'>
-                            <img src={images.pause} alt='pauseBtn'/>
-                        </div>
-                    :
-                        <div className='play-btn btn'>
-                            <img src={images.play} alt='playBtn'/>
-                        </div>
-                    }
-
-                    <div className='next-btn btn'>
-                            <img src={images.next} alt='nextBtn'/>
-                    </div>
-
-                    <div className='volumn-btn btn'>
-                            <img src={images.volumn} alt='volumnBtn'/>
-                    </div>
-                </div>
-
-                <div className='options-btns d-flex'>
-                    <div className='speed-btn btn me-0'>
-                        <span>1x</span>
-                    </div>
-                </div>
-            </div>
+            <ProgressBar/>
+            <Control
+                isPlaying={isPlaying}
+                setIsPlaying={setIsPlaying}
+                onNextClick={toNextTrack}
+                onVolumnClick={toAdjustVolumn}
+                onSpeedClick={toAdjustSpeed}
+            />
         </div>
     );
 }

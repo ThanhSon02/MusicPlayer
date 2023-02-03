@@ -3,7 +3,13 @@ import './Playlist.scss'
 
 function Playlist() {
     return (
-        <div className="playlist row justify-content-center">
+        <div className="playlist d-flex container-fluid">
+            <PlaylistItem/>
+            <PlaylistItem/>
+            <PlaylistItem/>
+            <PlaylistItem/>
+            <PlaylistItem/>
+            <PlaylistItem/>
             <PlaylistItem/>
             <PlaylistItem/>
             <PlaylistItem/>

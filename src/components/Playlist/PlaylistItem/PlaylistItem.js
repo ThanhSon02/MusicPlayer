@@ -3,7 +3,7 @@ import images from '../../../assets/img';
 
 function PlaylistItem() {
     return (
-        <div className="playlist-item col">
+        <div className="playlist-item">
             <img className="playlist-item__image" src={images.backgroung} alt=""/>
             <div className='playlist-item__desc'>
                 <p className='desc-name'>Cameron Williamson</p>

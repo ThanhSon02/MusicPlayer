@@ -1,5 +1,12 @@
 @import '../../styles/styles.scss';
 
-.play-list {
-    min-width: 500px;
+.playlist {
+    overflow: auto;
+    white-space: nowrap;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    margin-top: 30px;
 }
